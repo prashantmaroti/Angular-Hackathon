@@ -47,8 +47,11 @@ export class HackathonService {
           t => {
               this.ticks = t;
               console.log(this.ticks);
-              if ((this.ticks) <= 4) {
-                this.secondsDisplay = this.getSeconds(this.ticks);
+
+              this.colors = this.shuffle(['white', '#acacac', '#e3e3e3', '#5a5a5a']);
+              if ((this.ticks) <= 8) {
+                this.secondsDisplay = Math.round(this.getSeconds(this.ticks)/2);
+                console.log(this.secondsDisplay);
                 this.minutesDisplay = this.getMinutes(this.ticks);
                 this.hoursDisplay = this.getHours(this.ticks);
               // tslint:disable-next-line:one-line
@@ -56,10 +59,6 @@ export class HackathonService {
                 this.finish = false;
                 console.log(this.finish);
                 this.change = true;
-              }
-              if ((this.ticks) === 1) {
-                this.colors = this.shuffle(['white', 'red', 'blue', 'green']);
-                this.ticks = 0;
               }
           }
       );

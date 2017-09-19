@@ -11,12 +11,11 @@ export class AppComponent implements OnInit  {
 
   sub: Subscription;
   constructor(private hackathon: HackathonService) {}
-  colors = this.colors;
   score = 0;
   public ticks = 0;
   ngOnInit() {
-    this.colors = this.hackathon.shuffle(['white', '#acacac', '#e3e3e3', '#5a5a5a']);
-    console.log(this.colors);
+    this.hackathon.colors = this.hackathon.shuffle(['white', '#acacac', '#e3e3e3', '#5a5a5a']);
+    console.log(this.hackathon.colors);
   }
   onClick(color) {
     if (color === 'white' && this.hackathon.finish) {

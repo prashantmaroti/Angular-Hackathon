@@ -15,12 +15,12 @@
 <div class="row">
     <div class="col-3"></div>
     <div class="col-3">
-      <div class="rightCol2" [style.background-color]="colors[0]" (click)="this.hackathon.onClickTimer();onClick(colors[0]);hackathon.shuffle(colors);"></div>
-      <div class="rightCol1"  [style.background-color]="colors[1]" (click)="this.hackathon.onClickTimer();onClick(colors[1]);hackathon.shuffle(colors);"></div>
+      <div class="rightCol2" [style.background-color]="this.hackathon.colors[0]" (click)="this.hackathon.onClickTimer();onClick(this.hackathon.colors[0]);hackathon.shuffle(this.hackathon.colors);"></div>
+      <div class="rightCol1"  [style.background-color]="this.hackathon.colors[1]" (click)="this.hackathon.onClickTimer();onClick(this.hackathon.colors[1]);hackathon.shuffle(this.hackathon.colors);"></div>
     </div>
     <div class="col-3">
-      <div class="rightCol1"  [style.background-color]="colors[2]" (click)="this.hackathon.onClickTimer();onClick(colors[2]);hackathon.shuffle(colors);"></div>
-      <div class="rightCol2"  [style.background-color]="colors[3]" (click)="this.hackathon.onClickTimer();onClick(colors[3]);hackathon.shuffle(colors);"></div>
+      <div class="rightCol1"  [style.background-color]="this.hackathon.colors[2]" (click)="this.hackathon.onClickTimer();onClick(this.hackathon.colors[2]);hackathon.shuffle(this.hackathon.colors);"></div>
+      <div class="rightCol2"  [style.background-color]="this.hackathon.colors[3]" (click)="this.hackathon.onClickTimer();onClick(this.hackathon.colors[3]);hackathon.shuffle(this.hackathon.colors);"></div>
     </div>
     <div class="col-3"></div>
 </div>
