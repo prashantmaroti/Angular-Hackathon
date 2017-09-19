@@ -11,6 +11,7 @@ export class HackathonService {
   public count = 0;
   public change: Boolean = false;
   public finish: Boolean = true;
+  public score: Boolean = false;
   public ticks = 0;
   public minutesDisplay = 0;
   public hoursDisplay = 0;
@@ -63,7 +64,9 @@ export class HackathonService {
   }
 
   onClickTimer() {
-      if ((this.count) ===  0) { this.startTimer(); }
+      if ((this.count) ===  0) {
+        this.score = true;
+        this.startTimer(); }
 
      (this.count)  = (this.count) + 1;
       console.log(this.count);
@@ -76,7 +79,7 @@ export class HackathonService {
               console.log(this.ticks);
 
               this.colors = this.shuffle(['white', '#acacac', '#e3e3e3', '#5a5a5a']);
-              if ((this.ticks) <= 1) {
+              if ((this.ticks) <= 90) {
                 this.secondsDisplay = Math.round(this.getSeconds(this.ticks) / 2);
                 console.log(this.secondsDisplay);
                 this.minutesDisplay = this.getMinutes(this.ticks);
@@ -84,6 +87,7 @@ export class HackathonService {
               // tslint:disable-next-line:one-line
               } else{
                 this.finish = false;
+                this.score = false;
                 console.log(this.finish);
                 this.change = true;
                 this.sub.unsubscribe();

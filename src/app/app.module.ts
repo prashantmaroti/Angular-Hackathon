@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgControl } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule
+    HttpModule,
   ],
   providers: [HackathonService],
   bootstrap: [AppComponent]

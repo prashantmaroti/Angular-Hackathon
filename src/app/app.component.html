@@ -9,47 +9,50 @@
 </nav>
 
 <br><br>
+
 <div class="container">
-
-
+    <div class="text-center">
+    <button class="btn btn-secondary" (click)="this.hackathon.onClickTimer()">Start the Game</button></div><br>
 <div class="row">
     <div class="col-3"></div>
     <div class="col-3">
-      <div class="rightCol2" [style.background-color]="this.hackathon.colors[0]" (click)="this.hackathon.onClickTimer();onClick(this.hackathon.colors[0]);hackathon.shuffle(this.hackathon.colors);"></div>
-      <div class="rightCol1"  [style.background-color]="this.hackathon.colors[1]" (click)="this.hackathon.onClickTimer();onClick(this.hackathon.colors[1]);hackathon.shuffle(this.hackathon.colors);"></div>
+      <div class="rightCol2" [style.background-color]="this.hackathon.colors[0]" (click)="onClick(this.hackathon.colors[0])"></div>
+      <div class="rightCol1"  [style.background-color]="this.hackathon.colors[1]" (click)="onClick(this.hackathon.colors[1]);"></div>
     </div>
     <div class="col-3">
-      <div class="rightCol1"  [style.background-color]="this.hackathon.colors[2]" (click)="this.hackathon.onClickTimer();onClick(this.hackathon.colors[2]);hackathon.shuffle(this.hackathon.colors);"></div>
-      <div class="rightCol2"  [style.background-color]="this.hackathon.colors[3]" (click)="this.hackathon.onClickTimer();onClick(this.hackathon.colors[3]);hackathon.shuffle(this.hackathon.colors);"></div>
+      <div class="rightCol1"  [style.background-color]="this.hackathon.colors[2]" (click)="onClick(this.hackathon.colors[2]);"></div>
+      <div class="rightCol2"  [style.background-color]="this.hackathon.colors[3]" (click)="onClick(this.hackathon.colors[3]);"></div>
     </div>
     <div class="col-3"></div>
 </div>
 <br>
 <h3 class="text-center">Timer:
-    {{this.hackathon.hoursDisplay ? this.hackathon.hoursDisplay : '00'}} :
-    {{(this.hackathon.minutesDisplay) && (this.hackathon.minutesDisplay <= 59) ? this.hackathon.minutesDisplay : '00'}} :
-    {{(this.hackathon.secondsDisplay) && (this.hackathon.secondsDisplay <= 59) ? this.hackathon.secondsDisplay : '00'}} <br/>
+
+    {{(this.hackathon.secondsDisplay) && (this.hackathon.secondsDisplay <= 59) ? 90-this.hackathon.secondsDisplay : '90'}} <br/>
 </h3>
 <br>
 <h3 class="text-center"  *ngIf="!this.hackathon.change">Score:{{score}}</h3>
 <h2 class="text-center" *ngIf="this.hackathon.change">Game Finished. Your score is {{score}}.</h2>
 </div>
 <br><br>
+
 <div class="container" *ngIf="this.hackathon.change">
     <!-- Trigger the modal with a button -->
     <div class="text-center">
     <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#myModal">Submit Details</button>
   </div><br><br>
+
    <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog">
 
    <!-- ############## name and Id ##################### -->
 
-  <form id=myModal data-toggle="validator" role="form" #f="ngForm">
+  <form id=myModal data-toggle="validator" role="form"  novalidate>
 
 
    <div class="form-group">
+
       <label for="inputName" class="control-label">Name*</label>
       <input #nameBox type="text" class="form-control" id="inputName" name="inputName" placeholder="Name" required>
       <label for="inputGit" class="control-label">Git Url*</label>
@@ -70,7 +73,11 @@
       <input #emailBox type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" data-error="Email address is invalid" required>
       <div class="help-block with-errors"></div>
     </div>
-
+    <label for="validationCustom03">City</label>
+    <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+    <div class="invalid-feedback">
+      Please provide a valid city.
+    </div>
 
    <!-- ############## City ##################### -->
       <div class="dropdown">
@@ -94,7 +101,7 @@
     </div>
 
     <div class="form-group">
-      <button type="submit" class="btn btn-primary" (click)="(onSubmit(nameBox.value,emailBox.value,idBox.value,city.value,gitBox.value))">Submit</button>
+      <button type="submit" class="btn btn-secondary btn-block" (click)="(onSubmit(nameBox.value,emailBox.value,idBox.value,city.value,gitBox.value))">Submit</button>
     </div>
   </form>
 

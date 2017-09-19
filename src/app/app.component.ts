@@ -19,7 +19,7 @@ export class AppComponent implements OnInit  {
     console.log(this.hackathon.colors);
   }
   onClick(color) {
-    if (color === 'white' && this.hackathon.finish) {
+    if (color === 'white' && this.hackathon.finish && this.hackathon.score) {
       this.score++;
     }
     console.log(this.score);
