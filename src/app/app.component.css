@@ -1,0 +1,33 @@
+.column_test{
+	position: relative;
+	clear: both;
+	top: 100px; 
+	font-weight: 500;
+} 
+body{
+	text-align: center;
+}
+ 
+.leftCol {
+	float: left;
+	width: 50%; 
+    height: 300px;  
+}
+
+.rightCol {
+	position: relative; 
+	float: left;
+	width: 50%;
+}
+
+.rightCol1{ 
+	height: 150px;
+}
+.rightCol2 { 
+    height: 150px; 
+} 
+
+.col-6{
+	margin: 0px;
+	padding: 10px 0px;
+}
