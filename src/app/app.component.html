@@ -38,7 +38,7 @@
 <div class="container" *ngIf="this.hackathon.change">
     <!-- Trigger the modal with a button -->
     <div class="text-center">
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit Details</button>
+    <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#myModal">Submit Details</button>
   </div><br><br>
    <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
@@ -46,15 +46,16 @@
 
    <!-- ############## name and Id ##################### -->
 
-  <form id=myModal data-toggle="validator" role="form">
+  <form id=myModal data-toggle="validator" role="form" #f="ngForm">
 
 
    <div class="form-group">
       <label for="inputName" class="control-label">Name*</label>
-      <input type="text" class="form-control" id="inputName" placeholder="Name" required>
-
+      <input #nameBox type="text" class="form-control" id="inputName" name="inputName" placeholder="Name" required>
+      <label for="inputGit" class="control-label">Git Url*</label>
+      <input #gitBox type="text" class="form-control" id="inputName" name="inputGit" placeholder="Your Git Url" required>
      <label for="inputNumber" class="control-label">ID*</label>
-      <input type="text"  maxlength="9" class="form-control" id="inputNumber" placeholder="Id" data-error="ID is invalid" required>
+      <input #idBox type="number"  max="999999999" class="form-control" id="inputNumber" placeholder="Id" data-error="ID is invalid" required>
       <div class="help-block with-errors"></div>
 
    </div>
@@ -66,7 +67,7 @@
 
    <div class="form-group">
       <label for="inputEmail" class="control-label">Email*</label>
-      <input type="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Email address is invalid" required>
+      <input #emailBox type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" data-error="Email address is invalid" required>
       <div class="help-block with-errors"></div>
     </div>
 
@@ -74,7 +75,7 @@
    <!-- ############## City ##################### -->
       <div class="dropdown">
      <label class="control-label">Choose City  </label>
-      <select type="A" class="btn btn-default btn-block dropdown-toggle">
+      <select #city type="A" class="btn btn-default btn-block dropdown-toggle">
 
         <option>Mumbai</option>
         <option>Chennai</option>
@@ -93,7 +94,7 @@
     </div>
 
     <div class="form-group">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" (click)="(onSubmit(nameBox.value,emailBox.value,idBox.value,city.value,gitBox.value))">Submit</button>
     </div>
   </form>
 
@@ -106,7 +107,7 @@
               <h4>All rights reserved. </h4>
           </div>
 
-          <div class="col-sm-6">
+          <div class="col-sm-6 text-center">
               <h4>About Us</h4>
               <p>This is just for demonstration of a hackathon project.</p>
           </div>
