@@ -51,7 +51,7 @@ export class HackathonService {
 
 
               console.log(this.ticks);
-              if ((this.ticks) <= 3) {
+              if ((this.ticks) <= 90) {
                 this.secondsDisplay = this.getSeconds(this.ticks);
                 this.minutesDisplay = this.getMinutes(this.ticks);
                 this.hoursDisplay = this.getHours(this.ticks);

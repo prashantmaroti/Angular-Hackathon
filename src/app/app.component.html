@@ -1,10 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <div class="container">
+    <a class="navbar-brand" href="#">Hackathon Project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
+  </div>
+</nav>
+
+<br><br>
 <div class="container">
 
-<h3>Timer: </h3>
-<h3>
-    {{this.hackathon.hoursDisplay ? this.hackathon.hoursDisplay : '00'}} : {{(this.hackathon.minutesDisplay) && (this.hackathon.minutesDisplay <= 59) ? this.hackathon.minutesDisplay : '00'}} : {{(this.hackathon.secondsDisplay) && (this.hackathon.secondsDisplay <= 59) ? this.hackathon.secondsDisplay : '00'}} <br/>
-</h3>
+
 <div class="row">
         <div class="col-6">
           <div class="rightCol2" [style.background-color]="colors[0]" (click)="this.hackathon.onClickTimer();onClick(colors[0]);hackathon.shuffle(colors);"></div>
@@ -15,7 +22,28 @@
           <div class="rightCol2"  [style.background-color]="colors[3]" (click)="this.hackathon.onClickTimer();onClick(colors[3]);hackathon.shuffle(colors);"></div>
         </div>
 </div>
-
+<br>
+<h3 class="text-center">Timer:
+    {{this.hackathon.hoursDisplay ? this.hackathon.hoursDisplay : '00'}} : {{(this.hackathon.minutesDisplay) && (this.hackathon.minutesDisplay <= 59) ? this.hackathon.minutesDisplay : '00'}} : {{(this.hackathon.secondsDisplay) && (this.hackathon.secondsDisplay <= 59) ? this.hackathon.secondsDisplay : '00'}} <br/>
+</h3>
+<br>
 <h3 class="text-center"  *ngIf="!this.hackathon.change">Score:{{score}}</h3>
 <h2 class="text-center" *ngIf="this.hackathon.change">Game Finished. Your score is {{score}}.</h2>
 </div>
+<br><br>
+<footer>
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-6 text-center">
+              <h4>Copyright © 2017 Movie Cruiser. </h4>
+              <h4>All rights reserved. </h4>
+          </div>
+
+          <div class="col-sm-6">
+              <h4>About Us</h4>
+              <p>Movie Cruiser is the ultimate movie database.</p>
+          </div>
+
+      </div><!--End of row -->
+  </div><!--End of container -->
+</footer>
