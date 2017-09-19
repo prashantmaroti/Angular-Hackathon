@@ -30,11 +30,9 @@ export class AppComponent implements OnInit  {
     this.model.emailId = email;
     this.model.projectId = id;
     this.model.location = city;
-    this.model.gitUrl = git;
+    this.model.gitURL = git;
     console.log('Model', this.model);
-
     this.hackathon.create(name, email, id, city, git, this.score);
-    this.hackathon.createModel(this.model);
   }
 }
 

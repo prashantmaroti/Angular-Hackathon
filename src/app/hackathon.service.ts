@@ -21,13 +21,18 @@ export class HackathonService {
   'Access-Control-Allow-Origin' : 'http://localhost:4200', 'Access-Control-Allow-Credentials': 'true'});
 
   // tslint:disable-next-line:one-line
-  create(name, emailId, projectId, location, gitUrl, score){
+  create(name, emailId, projectId, location, gitURL, score){
+
     console.log('Submitting json', JSON.stringify({name: name, emailId: emailId,
-      projectId: projectId, location: location, gitUrl: gitUrl}));
-    return this.http
-    .post(this.Url, JSON.stringify({name: name, emailId: emailId,
-      projectId: projectId, location: location, gitUrl: gitUrl}), {headers: this.headers}).toPromise().catch(this.handleError);
+      projectId: projectId, location: location, gitURL: gitURL}));
+
+      const j = JSON.stringify({name: name, emailId: emailId,
+        projectId: projectId, location: location, gitURL: gitURL});
+        this.http
+        .post('http://172.23.238.209:8080/hackathon', j, {headers: this.headers}).toPromise().catch(this.handleError);
+
   }
+
   createModel(model) {
     console.log('Submitting model', JSON.stringify(model));
     return this.http

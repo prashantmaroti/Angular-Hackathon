@@ -4,11 +4,11 @@ export class Submit {
     emailId: string = '',
     projectId: string = '',
     location: string = '',
-    gitUrl: string = '') {}
+    gitURL: string = '') {}
 
     name: string;
     emailId: string;
     projectId: string;
     location: string;
-    gitUrl: string;
+    gitURL: string;
 }
