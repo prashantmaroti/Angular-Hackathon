@@ -1,4 +1,3 @@
-import { TimerComponent } from './timer/timer.component';
 import { Component, OnInit } from '@angular/core';
 import { HackathonService } from './hackathon.service';
 @Component({
