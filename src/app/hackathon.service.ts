@@ -14,6 +14,7 @@ export class HackathonService {
   public minutesDisplay = 0;
   public hoursDisplay = 0;
   public secondsDisplay = 0;
+  colors;
   shuffle(array: any): void {
     if (this.finish) {
       let currentIndex = array.length, temporaryValue, randomIndex;
@@ -34,8 +35,6 @@ export class HackathonService {
     return array; }
   }
 
-
-
   onClickTimer() {
       if ((this.count) ===  0) { this.startTimer(); }
 
@@ -43,15 +42,12 @@ export class HackathonService {
       console.log(this.count);
     }
   startTimer() {
-
-      const timer = Observable.timer(1, 1000);
+      const timer = Observable.timer(1, 500);
       this.sub = timer.subscribe(
           t => {
               this.ticks = t;
-
-
               console.log(this.ticks);
-              if ((this.ticks) <= 90) {
+              if ((this.ticks) <= 4) {
                 this.secondsDisplay = this.getSeconds(this.ticks);
                 this.minutesDisplay = this.getMinutes(this.ticks);
                 this.hoursDisplay = this.getHours(this.ticks);
@@ -60,6 +56,10 @@ export class HackathonService {
                 this.finish = false;
                 console.log(this.finish);
                 this.change = true;
+              }
+              if ((this.ticks) === 1) {
+                this.colors = this.shuffle(['white', 'red', 'blue', 'green']);
+                this.ticks = 0;
               }
           }
       );

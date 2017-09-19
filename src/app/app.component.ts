@@ -1,3 +1,4 @@
+import { Observable, Subscription } from 'rxjs/Rx';
 import { Component, OnInit } from '@angular/core';
 import { HackathonService } from './hackathon.service';
 @Component({
@@ -7,9 +8,12 @@ import { HackathonService } from './hackathon.service';
 })
 export class AppComponent implements OnInit  {
   title = 'app';
+
+  sub: Subscription;
   constructor(private hackathon: HackathonService) {}
-  colors;
+  colors = this.colors;
   score = 0;
+  public ticks = 0;
   ngOnInit() {
     this.colors = this.hackathon.shuffle(['white', '#acacac', '#e3e3e3', '#5a5a5a']);
     console.log(this.colors);
@@ -20,6 +24,7 @@ export class AppComponent implements OnInit  {
     }
     console.log(this.score);
   }
-
-
 }
+
+
+
