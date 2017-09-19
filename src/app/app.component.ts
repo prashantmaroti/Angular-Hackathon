@@ -12,7 +12,7 @@ export class AppComponent implements OnInit  {
   colors;
   score = 0;
   ngOnInit() {
-    this.colors = this.hackathon.shuffle(['white', 'red', 'blue', 'green']);
+    this.colors = this.hackathon.shuffle(['white', '#acacac', '#e3e3e3', '#5a5a5a']);
     console.log(this.colors);
   }
   onClick(color) {
