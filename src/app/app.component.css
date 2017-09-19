@@ -8,6 +8,9 @@ footer, footer .container{
   font-size: 12px;
   padding: 20px 0px;
 }
+form{
+  background-color: white;
+}
 footer a:hover{
 
         text-decoration: none;

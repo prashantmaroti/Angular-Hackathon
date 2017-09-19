@@ -3,15 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { TimerComponent } from './timer/timer.component';
+import { GameComponent } from './game/game.component';
+import { FormComponent } from './form/form.component';
+import { AppRoutingModule } from './app-routing';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TimerComponent
+    GameComponent,
+    FormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [HackathonService],
   bootstrap: [AppComponent]

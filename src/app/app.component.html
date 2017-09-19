@@ -26,13 +26,82 @@
 </div>
 <br>
 <h3 class="text-center">Timer:
-    {{this.hackathon.hoursDisplay ? this.hackathon.hoursDisplay : '00'}} : {{(this.hackathon.minutesDisplay) && (this.hackathon.minutesDisplay <= 59) ? this.hackathon.minutesDisplay : '00'}} : {{(this.hackathon.secondsDisplay) && (this.hackathon.secondsDisplay <= 59) ? this.hackathon.secondsDisplay : '00'}} <br/>
+    {{this.hackathon.hoursDisplay ? this.hackathon.hoursDisplay : '00'}} :
+    {{(this.hackathon.minutesDisplay) && (this.hackathon.minutesDisplay <= 59) ? this.hackathon.minutesDisplay : '00'}} :
+    {{(this.hackathon.secondsDisplay) && (this.hackathon.secondsDisplay <= 59) ? this.hackathon.secondsDisplay : '00'}} <br/>
 </h3>
 <br>
 <h3 class="text-center"  *ngIf="!this.hackathon.change">Score:{{score}}</h3>
 <h2 class="text-center" *ngIf="this.hackathon.change">Game Finished. Your score is {{score}}.</h2>
 </div>
 <br><br>
+<div class="container text-center" *ngIf="this.hackathon.change">
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit Details</button>
+  <br><br>
+   <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+   <!-- ############## name and Id ##################### -->
+
+  <form id=myModal data-toggle="validator" role="form">
+
+
+   <div class="form-group">
+      <label for="inputName" class="control-label">Name</label>
+      <input type="text" class="form-control" id="inputName" placeholder="Name" required>
+
+     <label for="inputNumber" class="control-label">ID</label>
+      <input type="text"  maxlength="9" class="form-control" id="inputNumber" placeholder="Id" data-error="ID is invalid" required>
+      <div class="help-block with-errors"></div>
+
+   </div>
+
+     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
+
+   <!-- ############## Email ##################### -->
+
+   <div class="form-group">
+      <label for="inputEmail" class="control-label">Email</label>
+      <input type="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Email address is invalid" required>
+      <div class="help-block with-errors"></div>
+    </div>
+
+
+   <!-- ############## City ##################### -->
+      <div class="dropdown">
+     <label class="control-label">Choose City </label>
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">City
+      <span class="caret"></span></button>
+      <ol type="A" class="dropdown-menu">
+        <li>Delhi</li>
+        <li>Mumbai</li>
+        <li>Chennai</li>
+        <li>Kolkata</li>
+        <li>Bangaluru</li>
+        <li>Guwahati</li>
+       <li>Hyderabad</li>
+        <li>Pune</li>
+        <li>Ahemadabad</li>
+      </ol>
+    </div>
+
+   <!-- ############## Score ##################### -->
+
+   <div class="form-group">
+      <label for="inputNumber" class="control-label">Score</label>
+      <input type="number" class="form-control" id="inputNumber" placeholder="Score" data-error="Score is invalid" required>
+      <div class="help-block with-errors"></div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+  </div></div></div>
 <footer>
   <div class="container">
       <div class="row">
