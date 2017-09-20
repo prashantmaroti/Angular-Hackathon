@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-  <div class="container">
-    <a class="navbar-brand" href="#">Hackathon Project</a>
+  <div class="container ">
+    <a class="navbar-brand pull-left" href="#">Hackathon Project</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,7 +28,7 @@
 <br>
 <h3 class="text-center">Timer:
 
-    {{(this.hackathon.secondsDisplay) && (this.hackathon.secondsDisplay <= 59) ? 90-this.hackathon.secondsDisplay : '90'}} <br/>
+    {{(this.hackathon.secondsDisplay) ? 90-this.hackathon.secondsDisplay : '90'}} <br/>
 </h3>
 <br>
 <h3 class="text-center"  *ngIf="!this.hackathon.change">Score:{{score}}</h3>
@@ -48,62 +48,7 @@
 
    <!-- ############## name and Id ##################### -->
 
-  <form id=myModal data-toggle="validator" role="form"  novalidate>
-
-
-   <div class="form-group">
-
-      <label for="inputName" class="control-label">Name*</label>
-      <input #nameBox type="text" class="form-control" id="inputName" name="inputName" placeholder="Name" required>
-      <label for="inputGit" class="control-label">Git Url*</label>
-      <input #gitBox type="text" class="form-control" id="inputName" name="inputGit" placeholder="Your Git Url" required>
-     <label for="inputNumber" class="control-label">ID*</label>
-      <input #idBox type="number"  max="999999999" class="form-control" id="inputNumber" placeholder="Id" data-error="ID is invalid" required>
-      <div class="help-block with-errors"></div>
-
-   </div>
-
-     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-
-
-   <!-- ############## Email ##################### -->
-
-   <div class="form-group">
-      <label for="inputEmail" class="control-label">Email*</label>
-      <input #emailBox type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" data-error="Email address is invalid" required>
-      <div class="help-block with-errors"></div>
-    </div>
-    <label for="validationCustom03">City</label>
-    <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
-    <div class="invalid-feedback">
-      Please provide a valid city.
-    </div>
-
-   <!-- ############## City ##################### -->
-      <div class="dropdown">
-     <label class="control-label">Choose City  </label>
-      <select #city type="A" class="btn btn-default btn-block dropdown-toggle">
-
-        <option>Mumbai</option>
-        <option>Chennai</option>
-        <option>Kolkata</option>
-        <option>Bangaluru</option>
-        <option>Guwahati</option>
-      </select>
-    </div>
-
-   <!-- ############## Score ##################### -->
-
-   <div class="form-group">
-      <label for="inputNumber" class="control-label">Score*</label>
-      <input disabled  value="{{score}}" type="number" class="form-control" id="inputNumber" data-error="Score is invalid" required>
-      <div class="help-block with-errors"></div>
-    </div>
-
-    <div class="form-group">
-      <button type="submit" class="btn btn-secondary btn-block" (click)="(onSubmit(nameBox.value,emailBox.value,idBox.value,city.value,gitBox.value))">Submit</button>
-    </div>
-  </form>
+  <app-form></app-form>
 
   </div></div></div>
 <footer>

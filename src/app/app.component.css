@@ -8,11 +8,6 @@ footer, footer .container{
   font-size: 12px;
   padding: 20px 0px;
 }
-form{
-  background-color: white;
-  padding: 20px;
-  border-radius: 3px;
-}
 footer a:hover{
 
         text-decoration: none;
