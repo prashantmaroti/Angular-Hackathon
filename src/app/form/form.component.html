@@ -1,29 +1,31 @@
-<form id=myModal data-toggle="validator" role="form"  novalidate>
+<form id=myModal data-toggle="validator" role="form"  ngNativeValidate>
 
        <div class="form-group">
 
-          <label for="inputName" class="control-label">Name*</label>
-          <input #nameBox type="text" class="form-control" id=" " name="inputName" placeholder="Name" required>
-          <!-- <div [hidden]="inputName.pristine"
-          class="alert alert-danger">
-          Name is required
-    </div> -->
-          <label for="inputGit" class="control-label">Git Url*</label>
-          <input #gitBox type="text" class="form-control" id="inputName" name="inputGit" placeholder="Your Git Url" required>
-         <label for="inputNumber" class="control-label">ID*</label>
-          <input #idBox type="number"  max="999999999" class="form-control" id="inputNumber" placeholder="Id" data-error="ID is invalid" required>
-          <div class="help-block with-errors"></div>
-
+          <label for="name">Name*</label>
+          <input type="text" class="form-control" id="name" required
+                 [(ngModel)]="model.name" name="name" #nameBox="ngModel" placeholder="Your name here." >
+          <div [hidden]="nameBox.valid || nameBox.pristine" class="alert alert-danger">
+            Name is required
+          </div>
+          <label for="gitBox">GitUrl*</label>
+          <input type="text" class="form-control" id="gitBox" required
+                 [(ngModel)]="model.gitURL" name="gitBox" #gitBox="ngModel" placeholder="Your GitURL here." >
+          <div [hidden]="gitBox.valid || gitBox.pristine" class="alert alert-danger">
+            GitUrl is required
+          </div>
+          <label for="inputGit">Project ID*</label>
+          <input type="number" max="999999999"  class="form-control" id="inputNumber" required
+                 [(ngModel)]="model.projectId" name="inputNumber" #idBox="ngModel" placeholder="Id" >
+          <div [hidden]="idBox.valid || idBox.pristine" class="alert alert-danger">
+            ID is required
+          </div>
        </div>
 
-         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-
-
        <!-- ############## Email ##################### -->
-
        <div class="form-group">
           <label for="inputEmail" class="control-label">Email*</label>
-          <input #emailBox type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" data-error="Email address is invalid" required>
+          <input #emailBox="ngModel" type="email" [(ngModel)]="model.emailId" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" data-error="Email address is invalid" required>
           <div class="help-block with-errors"></div>
         </div>
 
