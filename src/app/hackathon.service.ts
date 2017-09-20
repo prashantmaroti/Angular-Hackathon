@@ -79,7 +79,7 @@ export class HackathonService {
               console.log(this.ticks);
 
               this.colors = this.shuffle(['white', '#acacac', '#e3e3e3', '#5a5a5a']);
-              if ((this.ticks) <= 1) {
+              if ((this.ticks) <= 180) {
                 console.log(this.secondsDisplay);
                 this.minutesDisplay = this.getMinutes(this.ticks);
                 this.secondsDisplay = (this.getMinutes(this.ticks) * 30) + Math.round(this.getSeconds(this.ticks) / 2);
